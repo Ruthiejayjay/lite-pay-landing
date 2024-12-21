@@ -2,16 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Default to light mode */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #ffffff; /* Light background */
+  --foreground: #171717; /* Light text */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Allow for manual theme switching */
+html.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
 
 body {
