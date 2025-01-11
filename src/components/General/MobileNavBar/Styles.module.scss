@@ -1,0 +1,130 @@
+.mobileNav {
+    position: relative;
+    background-color: transparent;
+    padding: 1rem;
+  
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  
+      .navbarBrand {
+        font-size: 1.5rem;
+        font-weight: bold;
+        position: relative;
+        color: #6b43fb;
+      }
+      .toggleButton {
+        background: none;
+        border: none;
+        cursor: pointer;
+  
+        .toggleIcon {
+          width: 24px;
+          height: 3px;
+          background-color: #6b43fb;
+          display: block;
+          position: relative;
+  
+          &::before,
+          &::after {
+            content: "";
+            position: absolute;
+            width: 24px;
+            height: 3px;
+            background-color: #6b43fb;
+            left: 0;
+            transition: transform 0.3s;
+          }
+  
+          &::before {
+            top: -8px;
+          }
+  
+          &::after {
+            top: 8px;
+          }
+  
+          &.open {
+            background-color: transparent;
+  
+            &::before {
+              transform: rotate(45deg) translate(5px, 5px);
+            }
+  
+            &::after {
+              transform: rotate(-45deg) translate(5px, -5px);
+            }
+          }
+        }
+      }
+    }
+  
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 100%;
+      background-color: white;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 1000;
+  
+      &.open {
+        transform: translateX(0);
+      }
+  
+      .navLinks,
+      .authLinks {
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+        padding: 1rem;
+  
+        a {
+          padding: 0.5rem 1rem;
+          text-decoration: none;
+          font-size: 1rem;
+          color: black;
+  
+          &:hover {
+            font-weight: bold;
+            color: #6b43fb;
+          }
+        }
+      }
+      .authLinks {
+        display: flex;
+        gap: 10px;
+        margin-top: 1rem;
+  
+        .filledLink {
+          background-color: #6b43fb;
+          color: white;
+          border-radius: 20px;
+          padding: 0.5rem 1rem;
+          text-align: center;
+        }
+  
+        .outlinedLink {
+          border: 1px solid #6b43fb;
+          color: #6b43fb;
+          border-radius: 20px;
+          padding: 0.5rem 1rem;
+          text-align: center;
+        }
+      }
+    }
+  }
+  
+  .backDrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  
