@@ -9,7 +9,7 @@ import AboutDollar from "@/assets/vectors/about-dollar.svg";
 
 export default function About() {
   return (
-    <div id="about-us" className="relative p-3 md:p-8 pb-20 bg-background">
+    <div id="about-us" className="relative p-3 md:p-8 pb-10 bg-background">
       <div className={styles.topBgImg}>
         <AboutEclipse1 className={styles.aboutEclipse1} />
         <AboutYen className={styles.aboutYen} />

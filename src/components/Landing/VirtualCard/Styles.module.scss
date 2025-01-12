@@ -1,0 +1,21 @@
+.infoBgImg1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.4;
+
+  @media (max-width: 500px) {
+    display: none;
+  }
+}
+
+.infoBgImg2 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  opacity: 0.4;
+
+  @media (max-width: 500px) {
+    display: none;
+  }
+}
