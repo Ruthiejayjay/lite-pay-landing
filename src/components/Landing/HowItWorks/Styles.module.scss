@@ -10,7 +10,8 @@
 
 .curls2 {
   position: absolute;
-
+  top: 0;
+  left: 0;
   @media (max-width: 500px) {
     display: none;
   }

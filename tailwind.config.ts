@@ -19,6 +19,14 @@ const config: Config = {
         "large-lite": '5.2rem',
         large: '6rem'
       },
+      borderRadius: {
+        thin: '1.2rem',
+        "normal-lite": "1.4rem",
+        normal: "1.6rem",
+        small: '2.4rem',
+        "medium-lite": '3.2rem',
+        medium: '4.8rem',
+      },
       colors: {
         // background: "var(--background)",
         // foreground: "var(--foreground)",

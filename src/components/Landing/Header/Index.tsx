@@ -157,7 +157,7 @@ export default function Header() {
   return (
     <div className={clsx(styles.imageBackground, "w-full bg-cover")}>
       <div className="p-4 md:p-8 pb-10 bg-background bg-opacity-40">
-        <div className=" flex lg:grid-cols-2 flex-col justify-between p-small text-dark md:grid">
+        <div className=" mx-auto flex lg:grid-cols-2 flex-col justify-between xl:px-large text-dark md:grid">
           <div className=" flex flex-col justify-center items-center lg:items-start space-y-6 ">
             <h1 className="text-2xl font-bold text-dark text-center md:text-start md:text-4xl xl:text-6xl">
               Global transfer for your business
