@@ -28,7 +28,7 @@ export default function HowItWorks() {
   return (
     <div id="how-it-works" className="relative p-3 md:p-8 pb-20">
       <Curls2 className={styles.curls2} />
-      <div className=" mx-auto w-full p-thin md:p-medium flex flex-col justify-center">
+      <div className=" md:container mx-auto w-full p-thin md:p-medium flex flex-col justify-center">
         <div className="text-center space-y-2">
           <a
             href="#"

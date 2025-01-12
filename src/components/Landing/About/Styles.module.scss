@@ -1,0 +1,32 @@
+.topBgImg {
+  .aboutEclipse1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .aboutYen {
+    position: absolute;
+  }
+
+  @media (max-width: 500px) {
+    display: none;
+  }
+}
+
+.bottomBgImg {
+  .aboutEclipse2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  .aboutDollar {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
+  @media (max-width: 500px) {
+    display: none;
+  }
+}
