@@ -1,0 +1,27 @@
+.everythingBgImg1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  @media (max-width: 500px) {
+    display: none;
+  }
+}
+
+.itemsContent {
+  box-shadow: 0px 4px 69px rgba(137, 105, 252, 0.1);
+}
+
+.everythingBgImg2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  @media (max-width: 500px) {
+    display: none;
+  }
+}
+
+.icon {
+    fill: white;
+}
