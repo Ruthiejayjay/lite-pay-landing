@@ -3,6 +3,7 @@ import styles from "./Styles.module.scss";
 
 import InfoBgImg1 from "@/assets/vectors/info-bg-1.svg";
 import InfoBgImg2 from "@/assets/vectors/info-bg-2.svg";
+import SubmitButton from "@/components/General/SubmitButton/Index";
 
 const AppUsageInfo = [
   {
@@ -24,9 +25,9 @@ const AppUsageInfo = [
 
 export default function VirtualCard() {
   return (
-    <div className="relative p-3 md:p-8 pb-20">
-      <InfoBgImg1 className={styles.infoBgImg1}/>
-      <div className=" md:container mx-auto mt-10 w-full p-thin md:p-medium flex flex-col justify-center relative z-20">
+    <div className="relative p-3 md:p-8 pb-10 ">
+      <InfoBgImg1 className={styles.infoBgImg1} />
+      <div className=" md:container mx-auto mt-5 w-full p-thin md:p-medium flex flex-col justify-center relative z-20">
         <div className="mx-auto flex justify-center items-center text-center space-y-2">
           <h3 className="text-xl md:text-4xl font-semibold text-brand-900 md:w-4/6">
             Create free USD, GBP and EUR accounts for all your international
@@ -39,13 +40,18 @@ export default function VirtualCard() {
               className="my-4 flex flex-col gap-[0.8rem] rounded-[1.6rem] bg-[#F5F6FA] px-[2.4rem] py-[1.6rem]"
               key={index}
             >
-              <h2 className=" md:text-xl font-medium">{info.title}</h2>
+              <h2 className="text-lg md:text-xl font-medium">{info.title}</h2>
               <p className="text-justify">{info.content}</p>
             </div>
           ))}
         </div>
+        <div className="flex justify-center items-center">
+          <SubmitButton className="px-10 md:px-20 py-2 rounded-3xl bg-brand text-white hover:bg-brand-700">
+            Create an Account
+          </SubmitButton>
+        </div>
       </div>
-      <InfoBgImg2 className={styles.infoBgImg2}/>
+      <InfoBgImg2 className={styles.infoBgImg2} />
     </div>
   );
 }
