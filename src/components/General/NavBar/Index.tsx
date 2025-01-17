@@ -4,7 +4,7 @@ const navActions = [
   { title: "How it Works", route: "#how-it-works" },
   { title: "About", route: "#about-us" },
   { title: "Testimonials", route: "#testimonials" },
-  { title: "Faqs", route: "faqs" },
+  { title: "Faqs", route: "#faqs" },
   { title: "Contact", route: "#contact" },
 ];
 
