@@ -6,6 +6,7 @@ import HowItWorks from "@/components/Landing/HowItWorks/Index";
 import About from "@/components/Landing/About/Index";
 import VirtualCard from "@/components/Landing/VirtualCard/Index";
 import EverythingYouNeedToKnow from "@/components/Landing/EverythingYouNeedToKnow/Index";
+import Testimonial from "@/components/Landing/Testimonial/Index";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
         <About />
         <VirtualCard />
         <EverythingYouNeedToKnow />
+        <Testimonial />
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center"></footer>
     </div>
