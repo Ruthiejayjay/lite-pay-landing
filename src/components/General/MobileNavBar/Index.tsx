@@ -18,7 +18,7 @@ export default function MobileNav() {
     { title: "How it Works", route: "#how-it-works" },
     { title: "About", route: "#about-us" },
     { title: "Testimonials", route: "#testimonials" },
-    { title: "FAQs", route: "faqs" },
+    { title: "FAQs", route: "#faqs" },
     { title: "Contact", route: "#contact" },
   ];
 
