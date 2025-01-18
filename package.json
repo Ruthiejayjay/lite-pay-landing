@@ -9,12 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/nodemailer": "^6.4.17",
     "axios": "^1.7.9",
     "clsx": "^2.1.1",
+    "firebase": "^11.2.0",
     "next": "14.2.22",
+    "nodemailer": "^6.9.16",
     "react": "^18",
     "react-dom": "^18",
-    "sass": "^1.83.1"
+    "sass": "^1.83.1",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
