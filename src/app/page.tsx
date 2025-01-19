@@ -9,6 +9,7 @@ import EverythingYouNeedToKnow from "@/components/Landing/EverythingYouNeedToKno
 import Testimonial from "@/components/Landing/Testimonial/Index";
 import FAQ from "@/components/Landing/FAQ/Index";
 import GetInTouch from "@/components/Landing/GetInTouch/Index";
+import Footer from "@/components/Landing/Footer/Index";
 
 export default function Home() {
   return (
@@ -28,8 +29,8 @@ export default function Home() {
         <Testimonial />
         <FAQ />
         <GetInTouch />
+        <Footer />
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center"></footer>
     </div>
   );
 }
