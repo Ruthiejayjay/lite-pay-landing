@@ -96,7 +96,7 @@ export default function GetInTouch() {
   };
 
   return (
-    <div id="contact" className="relative p-3 md:p-8 pb-10 bg-[#F3F2FC]">
+    <div id="contact" className="relative py-7 md:p-8 md:py-16 bg-[#F3F2FC]">
       <div className="md:container bg-brand-900 mx-auto mt-5 rounded-thin w-full p-thin md:p-medium relative z-20">
         <div className="grid gap-10 lg:grid-cols-2">
           <div className="flex flex-col self-center space-y-4 text-white">
