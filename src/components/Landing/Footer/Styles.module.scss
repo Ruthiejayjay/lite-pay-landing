@@ -1,5 +1,67 @@
 .newsletterBox {
-    @media (max-width: 310px) {
-        // width: 250px !important;
+  @media (max-width: 310px) {
+    // width: 250px !important;
+  }
+}
+
+.newsletterInputWrap {
+  position: relative;
+
+  input {
+    width: 100%;
+    border: 1px solid #1545a7;
+    border-radius: 35px;
+    padding: 1.2rem 2rem;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 27px;
+
+    @media (max-width: 766px) {
+      width: 80%;
+      padding: 0.8rem 1.5rem;
     }
+
+    // @include media-breakpoint-down(sm) {
+    //   padding: 0.8rem 2rem;
+    //   width: 80%;
+    //   font-size: 16px;
+    // }
+  }
+
+  button {
+    background: #2d1c69;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 23px;
+    text-align: center;
+    text-transform: uppercase;
+    border-color: transparent;
+    padding: 1.1rem 2.5rem;
+    border-radius: 30px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    color: #fff;
+
+    @media (max-width: 766px) {
+      position: initial;
+      width: 80%;
+      margin-top: 10px;
+    }
+
+    // &:hover {
+    //   background: $dark-btn-hover;
+    // }
+
+    // @include media-breakpoint-down(sm) {
+    //   position: initial;
+    //   border: 1px solid #161618;
+    //   width: 80%;
+    //   margin-top: 10px;
+    // }
+
+    @media (max-width: 300px) {
+      font-size: 12px;
+    }
+  }
 }
