@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className="min-h-screen gap-16 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col">
-        <div className="block md:hidden p-4 md:p-8">
+        <div className="block md:hidden">
           <MobileNav />
         </div>
         <div className="hidden md:block">
