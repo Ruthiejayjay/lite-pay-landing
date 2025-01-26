@@ -15,8 +15,8 @@ const authActions = [
 
 export default function Index() {
   return (
-    <div className="p-4 md:p-8 pb-20">
-      <div className="grid md:grid-cols-[1fr,2fr,1fr] items-center lg:px-small">
+    <div className="relative p-3">
+      <div className="container mx-auto grid md:grid-cols-[1fr,2fr,1fr] items-center lg:px-small">
         <Link href="/" className="text-2xl font-bold text-brand-500">
           Lite Pay
         </Link>
