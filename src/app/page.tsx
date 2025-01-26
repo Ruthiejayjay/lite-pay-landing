@@ -21,7 +21,7 @@ export default function Home() {
         <div className="hidden md:block">
           <NavBar />
         </div>
-        {/* <Header /> */}
+        <Header />
         <HowItWorks />
         <About />
         <VirtualCard />
