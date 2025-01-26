@@ -40,7 +40,7 @@ export default function EverythingYouNeedToKnow() {
             <div
               key={index}
               className={clsx(
-                "flex flex-col items-center p-6 rounded-[1.6rem] text-center space-y-2 bg-white",
+                "flex flex-col items-center p-12 rounded-[1.6rem] text-center space-y-2 bg-white",
                 styles.itemsContent
               )}
             >
