@@ -9,9 +9,10 @@
 
   input {
     width: 100%;
-    border: 1px solid #1545a7;
+    background: #F5F6FA;
+    border: 1px solid #EAEAEA;
     border-radius: 35px;
-    padding: 1.2rem 2rem;
+    padding: 0.6rem 2rem;
     font-size: 18px;
     font-weight: 300;
     line-height: 27px;
@@ -20,12 +21,6 @@
       width: 80%;
       padding: 0.8rem 1.5rem;
     }
-
-    // @include media-breakpoint-down(sm) {
-    //   padding: 0.8rem 2rem;
-    //   width: 80%;
-    //   font-size: 16px;
-    // }
   }
 
   button {
@@ -36,7 +31,7 @@
     text-align: center;
     text-transform: uppercase;
     border-color: transparent;
-    padding: 1.1rem 2.5rem;
+    padding: 0.5rem 2rem;
     border-radius: 30px;
     position: absolute;
     right: 5px;
@@ -48,17 +43,6 @@
       width: 80%;
       margin-top: 10px;
     }
-
-    // &:hover {
-    //   background: $dark-btn-hover;
-    // }
-
-    // @include media-breakpoint-down(sm) {
-    //   position: initial;
-    //   border: 1px solid #161618;
-    //   width: 80%;
-    //   margin-top: 10px;
-    // }
 
     @media (max-width: 300px) {
       font-size: 12px;

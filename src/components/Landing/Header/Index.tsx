@@ -1,6 +1,7 @@
-import SubmitButton from "@/components/General/SubmitButton/Index";
 import clsx from "clsx";
 import styles from "./Styles.module.scss";
+
+import SubmitButton from "@/components/General/SubmitButton/Index";
 import SvgIcon from "@/components/General/SvgIcon/SvgIcon";
 
 import { useState, useEffect } from "react";
@@ -61,7 +62,6 @@ const transferStatusTemplate = [
     icon: "info-circle",
   },
 ];
-
 export default function Header() {
   const [baseCurrency, setBaseCurrency] = useState<Currency>(currencies[0]);
   const [targetCurrency, setTargetCurrency] = useState<Currency>(currencies[1]);
@@ -155,9 +155,11 @@ export default function Header() {
   }, [baseCurrency, targetCurrency]);
 
   return (
-    <div className={clsx(styles.imageBackground, "w-full bg-cover")}>
-      <div className="p-4 md:p-8 pb-10 bg-background bg-opacity-40">
-        <div className=" mx-auto flex lg:grid-cols-2 flex-col justify-between xl:px-large text-dark md:grid">
+    <div
+      className={clsx(" relative p-3 md:p-8 md:py-10", styles.imageBackground)}
+    >
+      <div className="md:container mx-auto bg-background bg-opacity-40">
+        <div className=" flex lg:grid-cols-2 flex-col justify-between xl:px-large text-dark md:grid">
           <div className=" flex flex-col justify-center items-center lg:items-start space-y-6 ">
             <h1 className="text-2xl font-bold text-dark text-center md:text-start md:text-4xl xl:text-6xl">
               Global transfer for your business
@@ -186,7 +188,7 @@ export default function Header() {
           <div className="flex justify-center mt-10">
             <div
               className={clsx(
-                "flex flex-col justify-between rounded-xl bg-white p-6 ",
+                "flex flex-col justify-between rounded-xl bg-white p-4 md:p-6 ",
                 styles.exchangeContainer
               )}
             >
@@ -220,7 +222,7 @@ export default function Header() {
                   <img
                     src={selectedSendCurrency.flag}
                     alt={`${selectedSendCurrency.currency_code} flag`}
-                    className="w-4 h-4 md:w-8 md:h-8 rounded-full"
+                    className="w-4 h-4 md:w-8 md:h-8 rounded-full -ml-20 md:-ml-0"
                   />
                   <span className="ml-1 text-sm md:text-lg">
                     {selectedSendCurrency.currency_code}
@@ -249,7 +251,7 @@ export default function Header() {
                   <img
                     src={selectedRecipientCurrency.flag}
                     alt={`${selectedRecipientCurrency.currency_code} flag`}
-                    className="w-4 h-4 md:w-8 md:h-8 rounded-full"
+                    className="w-4 h-4 md:w-8 md:h-8 rounded-full -ml-20 md:-ml-0"
                   />
                   <span className="ml-1 text-sm md:text-lg">
                     {selectedRecipientCurrency.currency_code}
@@ -273,7 +275,8 @@ export default function Header() {
                       <span className="text-sm md:text-base">
                         {status.value}
                       </span>
-                      <SvgIcon name={status.icon}
+                      <SvgIcon
+                        name={status.icon}
                         className="mt-1 md:mt-0 md:text-xl fill-dark-400"
                       />
                     </div>
