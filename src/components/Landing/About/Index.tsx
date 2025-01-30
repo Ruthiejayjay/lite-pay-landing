@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import styles from "./Styles.module.scss";
 import SubmitButton from "@/components/General/SubmitButton/Index";
 
@@ -7,6 +6,14 @@ import AboutEclipse2 from "@/assets/vectors/about-eclipse-2.svg";
 import AboutYen from "@/assets/vectors/about-yen.svg";
 import AboutDollar from "@/assets/vectors/about-dollar.svg";
 
+import { delay, motion } from "framer-motion";
+
+const slideInVariant = {
+  initial: { y: "100%", opacity: 0 },
+  animate: { y: 0, opacity: 1 },
+  transition: { duration: 0.8, ease: "easeOut" },
+};
+
 export default function About() {
   return (
     <div id="about-us" className="relative p-3 md:p-8 pb-10 bg-background">
@@ -14,7 +21,14 @@ export default function About() {
         <AboutEclipse1 className={styles.aboutEclipse1} />
         <AboutYen className={styles.aboutYen} />
       </div>
-      <div className="relative p-5 lg:px-[10rem] lg:py-[4rem] z-30">
+      <motion.div
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.2 }}
+        transition={slideInVariant.transition}
+        variants={slideInVariant}
+        className="relative p-5 lg:px-[10rem] lg:py-[4rem] z-30"
+      >
         <div className=" md:container mx-auto bg-white p-8 md:p-[4.8rem] rounded-small md:rounded-medium-lite ">
           <h2 className=" text-2xl md:text-[36px] font-semibold text-brand-900 my-3 ">
             About Lite Pay
@@ -50,7 +64,7 @@ export default function About() {
             Create an Account
           </SubmitButton>
         </div>
-      </div>
+      </motion.div>
       <div className={styles.bottomBgImg}>
         <AboutEclipse2 className={styles.aboutEclipse2} />
         <AboutDollar className={styles.aboutDollar} />

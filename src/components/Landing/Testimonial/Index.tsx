@@ -2,6 +2,7 @@ import clsx from "clsx";
 import styles from "./Styles.module.scss";
 import QuoteIcon from "@/assets/icons/quote-icon.svg";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const testimonies = [
   {
@@ -10,7 +11,7 @@ const testimonies = [
     title: "CEO, Perpertuals",
     testimony:
       " Lite Pay has been a game-changer for me when it comes to sending money across borders. The platform is user-friendly, and I can easily make bulk payments to multiple recipients with just a few clicks. I appreciate the low transfer fees and the fast payout feature, which saves me time and money. Most importantly, the security and privacy of my personal and financial information are guaranteed. I highly recommend Lite Pay to anyone looking for a reliable and efficient way to transfer money across borders.",
-    image: "1",
+    image: "https://xsgames.co/randomusers/avatar.php?g=male&1",
   },
   {
     id: 2,
@@ -18,7 +19,7 @@ const testimonies = [
     title: "CEO, Amazon",
     testimony:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem inventore nobis nam molestiae atque assumenda ipsum sequi. Dicta beatae deserunt iusto inventore laudantium quasi suscipit sint fuga aliquid, cupiditate, accusantium dolorem hic ratione a odio mollitia temporibus, dolores soluta officia magni? Facere sint ipsa dolor ut ea soluta. Praesentium quod dicta hic eos est voluptas maxime culpa dolor optio? Laborum.",
-    image: "2",
+    image: "https://xsgames.co/randomusers/avatar.php?g=male&2",
   },
   {
     id: 3,
@@ -26,10 +27,15 @@ const testimonies = [
     title: "President, United States",
     testimony:
       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem inventore nobis nam molestiae atque assumenda ipsum sequi. Dicta beatae deserunt iusto inventore laudantium quasi suscipit sint fuga aliquid, cupiditate, accusantium dolorem hic ratione a odio mollitia temporibus, dolores soluta officia magni? Facere sint ipsa dolor ut ea soluta. Praesentium quod dicta hic eos est voluptas maxime culpa dolor optio? Laborum.",
-    image: "3",
+    image: "https://xsgames.co/randomusers/avatar.php?g=male&3",
   },
 ];
 
+const slideInVariant = {
+  initial: { x: "-100%", opacity: 0 },
+  animate: { x: 0, opacity: 1 },
+  transition: { duration: 0.8, ease: "easeOut" },
+};
 export default function Testimonial() {
   const [activeIndex, setActiveIndex] = useState<number>(0);
 
@@ -50,7 +56,12 @@ export default function Testimonial() {
             What Our Customers Say
           </h3>
         </div>
-        <div
+        <motion.div
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={slideInVariant.transition}
+          variants={slideInVariant}
           className={clsx(
             "relative p-normal-lite md:p-medium-lite mt-7",
             styles.testimony
@@ -80,12 +91,16 @@ export default function Testimonial() {
               ></button>
             ))}
           </div>
-          <img
-            src="https://xsgames.co/randomusers/avatar.php?g=male"
-            alt=""
+          <motion.img
+            key={testimonies[activeIndex].image} // Ensures re-render on change
+            src={testimonies[activeIndex].image}
+            alt={testimonies[activeIndex].name}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             className="absolute -bottom-[2rem] right-[2rem] h-[4rem] w-[4rem] rounded-full md:w-[6rem] md:h-[6rem] md:right-[6rem]"
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

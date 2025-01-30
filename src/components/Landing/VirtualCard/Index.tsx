@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import { motion } from "framer-motion";
 import styles from "./Styles.module.scss";
 
 import InfoBgImg1 from "@/assets/vectors/info-bg-1.svg";
@@ -23,6 +23,26 @@ const AppUsageInfo = [
   },
 ];
 
+const slideInVariants = [
+  {
+    initial: { x: "-100%", opacity: 0 },
+    animate: { x: 0, opacity: 1 },
+  },
+  {
+    initial: { y: "100%", opacity: 0 },
+    animate: { y: 0, opacity: 1 },
+  },
+  {
+    initial: { x: "100%", opacity: 0 },
+    animate: { x: 0, opacity: 1 },
+  },
+];
+
+const buttonVariant = {
+  initial: { y: 50, opacity: 0 },
+  animate: { y: 0, opacity: 1 },
+};
+
 export default function VirtualCard() {
   return (
     <div className="relative p-3 md:p-8 pb-10 ">
@@ -36,20 +56,32 @@ export default function VirtualCard() {
         </div>
         <div className="my-6 flex flex-col gap-x-6 md:grid lg:grid-cols-3">
           {AppUsageInfo.map((info, index) => (
-            <div
-              className="my-4 flex flex-col gap-[0.8rem] rounded-[1.6rem] bg-[#F5F6FA] px-[2.4rem] py-[1.6rem]"
+            <motion.div
               key={index}
+              variants={slideInVariants[index]}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.8, delay: index * 0.3 }}
+              className="my-4 flex flex-col gap-[0.8rem] rounded-[1.6rem] bg-[#F5F6FA] px-[2.4rem] py-[1.6rem]"
             >
               <h2 className="text-lg md:text-xl font-medium">{info.title}</h2>
               <p className="text-justify">{info.content}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
-        <div className="flex justify-center items-center">
+        <motion.div
+          variants={buttonVariant}
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8, delay: 1 }}
+          className="flex justify-center items-center"
+        >
           <SubmitButton className="px-10 md:px-20 py-2 rounded-3xl bg-brand text-white hover:bg-brand-700">
             Create an Account
           </SubmitButton>
-        </div>
+        </motion.div>
       </div>
       <InfoBgImg2 className={styles.infoBgImg2} />
     </div>

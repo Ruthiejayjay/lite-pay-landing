@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { motion } from "framer-motion";
 import styles from "./Styles.module.scss";
 import Curls1 from "@/assets/vectors/curls-1.svg";
 import Curls2 from "@/assets/vectors/curls-2.svg";
@@ -24,6 +25,21 @@ const howItWorks = [
   },
 ];
 
+const slideInVariants = [
+  {
+    initial: { x: "-100%", opacity: 0 },
+    animate: { x: 0, opacity: 1 },
+  },
+  {
+    initial: { y: "100%", opacity: 0 },
+    animate: { y: 0, opacity: 1 },
+  },
+  {
+    initial: { x: "100%", opacity: 0 },
+    animate: { x: 0, opacity: 1 },
+  },
+];
+
 export default function HowItWorks() {
   return (
     <div id="how-it-works" className="relative p-3 md:p-8 pb-20">
@@ -42,8 +58,13 @@ export default function HowItWorks() {
         </div>
         <div className="relative grid justify-center gap-x-[3rem] lg:grid-cols-3">
           {howItWorks.map((step, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={slideInVariants[index]}
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.8, delay: index * 0.3 }}
               className={clsx(
                 "relative w-full z-10 mx-auto mt-10 lg:mt-20 py-12 space-y-3 px-5 md:px-10 flex flex-col items-center justify-center bg-white",
                 styles.stepBoxes
@@ -59,7 +80,7 @@ export default function HowItWorks() {
               </div>
               <h4 className="text-xl font-bold text-brand-900">{step.title}</h4>
               <p className="text-center">{step.content}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

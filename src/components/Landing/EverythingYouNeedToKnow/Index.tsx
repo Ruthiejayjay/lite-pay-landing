@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { motion } from "framer-motion";
 import styles from "./Styles.module.scss";
 import SvgIcon from "@/components/General/SvgIcon/SvgIcon";
 import EverythingBgImg1 from "@/assets/vectors/everything-bg-1.svg";
@@ -25,6 +26,11 @@ const everythingYouNeedToKnow = [
   },
 ];
 
+const slideInVariant = {
+  initial: { x: "100%", opacity: 0 },
+  animate: { x: 0, opacity: 1 },
+  transition: { duration: 0.8, ease: "easeOut" },
+ }
 export default function EverythingYouNeedToKnow() {
   return (
     <div className="relative p-3 md:p-8 pb-10 bg-background">
@@ -37,8 +43,13 @@ export default function EverythingYouNeedToKnow() {
         </div>
         <div className="my-5 flex flex-col gap-5 lg:flex-row">
           {everythingYouNeedToKnow.map(({ title, content, icon }, index) => (
-            <div
-              key={index}
+            <motion.div
+            key={index}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={slideInVariant}
+            transition={{ ...slideInVariant.transition, delay: index * 0.1 }}
               className={clsx(
                 "flex flex-col items-center p-12 rounded-[1.6rem] text-center space-y-2 bg-white",
                 styles.itemsContent
@@ -49,7 +60,7 @@ export default function EverythingYouNeedToKnow() {
               </div>
               <h2 className=" text-xl font-semibold text-dark-500">{title}</h2>
               <p>{content}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
