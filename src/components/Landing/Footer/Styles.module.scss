@@ -9,8 +9,8 @@
 
   input {
     width: 100%;
-    background: #F5F6FA;
-    border: 1px solid #EAEAEA;
+    background: #f5f6fa;
+    border: 1px solid #eaeaea;
     border-radius: 35px;
     padding: 0.6rem 2rem;
     font-size: 18px;
@@ -48,4 +48,17 @@
       font-size: 12px;
     }
   }
+}
+.ctaMessage {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
 }
