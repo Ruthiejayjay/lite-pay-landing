@@ -1,4 +1,8 @@
 import clsx from "clsx";
+import { useRef } from "react";
+import { useFormState } from "react-dom";
+
+import { addToWaitList } from "@/actions";
 import SubmitButton from "@/components/General/SubmitButton/Index";
 import styles from "./Styles.module.scss";
 import Link from "next/link";
@@ -31,7 +35,18 @@ const socialIcons = [
   },
 ];
 
+const initialState = {
+  message: "",
+  success: false,
+};
+
 export default function Footer() {
+  const [state, formAction] = useFormState(addToWaitList, initialState);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  if (formRef.current && state.success) {
+    formRef.current.reset();
+  }
   return (
     <div className="relative p-3 md:p-8 md:py-10 bg-white">
       <div className="md:container my-5 mx-auto ">
@@ -68,15 +83,25 @@ export default function Footer() {
               offers, new features, and industry insights.
             </p>
             <div className={styles.newsletterInputWrap}>
-              <form action="">
+              <form ref={formRef} action={formAction}>
                 <input
                   name="email"
                   type="text"
                   placeholder="Type your email..."
                 />
-                <SubmitButton>Subscribe</SubmitButton>
+                <SubmitButton >Subscribe</SubmitButton>
               </form>
             </div>
+            {state.message && (
+              <p
+                className={clsx(
+                  styles.ctaMessage,
+                  state.success ? styles.success : styles.error
+                )}
+              >
+                {state.message}
+              </p>
+            )}
           </div>
           <div className="space-y-5">
             <h2 className="font-semibold text-brand-900 md:mb-10 md:mt-0">

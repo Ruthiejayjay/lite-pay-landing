@@ -92,7 +92,7 @@ export default function Testimonial() {
             ))}
           </div>
           <motion.img
-            key={testimonies[activeIndex].image} // Ensures re-render on change
+            key={testimonies[activeIndex].image}
             src={testimonies[activeIndex].image}
             alt={testimonies[activeIndex].name}
             initial={{ opacity: 0, scale: 0.8 }}
